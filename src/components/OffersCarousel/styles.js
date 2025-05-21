@@ -3,6 +3,14 @@ import styled from 'styled-components';
 export const Container = styled.div`
   .carousel-items {
     padding-right: 40px;
+
+    @media (max-width: 768px) {
+      padding-right: 20px;
+    }
+
+    @media (max-width: 480px) {
+      padding-right: 10px;
+    }
   }
 
   overflow-x: hidden;
@@ -14,6 +22,10 @@ export const Container = styled.div`
   .react-multiple-carousel__arrow--left {
     left: 15px;
     top: 10px;
+
+    @media (max-width: 480px) {
+      left: 5px;
+    }
   }
 
   .react-multiple-carousel__arrow--right {
@@ -22,6 +34,16 @@ export const Container = styled.div`
 
   padding-left: 40px;
   padding-bottom: 40px;
+
+  @media (max-width: 768px) {
+    padding-left: 20px;
+    padding-bottom: 30px;
+  }
+
+  @media (max-width: 480px) {
+    padding-left: 10px;
+    padding-bottom: 20px;
+  }
 `;
 
 export const Title = styled.h2`
@@ -41,5 +63,20 @@ export const Title = styled.h2`
     height: 4px;
     background-color: ${(props) => props.theme.green};
     left: calc(50% - 28px);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+    margin: 50px 0;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 24px;
+    margin: 40px 0;
+
+    &::after {
+      width: 40px;
+      left: calc(50% - 20px);
+    }
   }
 `;

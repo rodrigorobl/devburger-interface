@@ -6,16 +6,25 @@ export const Container = styled.div`
   width: 100%;
   height: 72px;
   padding: 0 56px;
+
+  @media (max-width: 768px) {
+    padding: 0 20px;
+    height: auto;
+  }
 `;
 
 export const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 10px 0;
+  }
 `;
 
 export const Navigation = styled.nav`
@@ -35,7 +44,22 @@ export const Navigation = styled.nav`
     height: 24px;
     border: 1px solid ${(props) => props.theme.darkGray};
   }
+
+  @media (max-width: 768px) {
+    height: auto;
+    padding: 10px 0;
+
+    div {
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    hr {
+      display: none;
+    }
+  }
 `;
+
 export const HeaderLink = styled(Link)`
   color: ${(props) => (props.$isActive ? (props) => props.theme.purple : (props) => props.theme.white)};
   border-bottom: ${(props) => (props.$isActive ? `1px solid ${(props) => props.theme.purple}` : "none")};
@@ -47,6 +71,10 @@ export const HeaderLink = styled(Link)`
   &:hover {
     color: ${(props) => props.theme.purple};
   }
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 
 export const Options = styled.div`
@@ -54,6 +82,16 @@ export const Options = styled.div`
   align-items: center;
   justify-content: center;
   gap: 48px;
+
+  @media (max-width: 768px) {
+    gap: 20px;
+    margin-top: 10px;
+  }
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 15px;
+  }
 `;
 
 export const Profile = styled.div`
@@ -72,12 +110,21 @@ export const Profile = styled.div`
       color: ${(props) => props.theme.purple};
     }
   }
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 
 export const LinkContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const Logout = styled.button`

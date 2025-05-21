@@ -35,10 +35,56 @@ export const Container = styled.div`
       line-height: 20px;
     }
   }
+
+  @media (max-width: 768px) {
+    padding: 15px;
+    gap: 30px;
+
+    div {
+      height: 70px;
+
+      p {
+        font-size: 16px;
+        margin-top: 35px;
+      }
+
+      strong {
+        font-size: 20px;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 12px;
+    gap: 25px;
+
+    div {
+      height: 60px;
+
+      p {
+        font-size: 14px;
+        margin-top: 30px;
+      }
+
+      strong {
+        font-size: 18px;
+      }
+    }
+  }
 `;
 
 export const CardImage = styled.img`
   height: 100px;
   position: absolute;
   top: -50px;
+
+  @media (max-width: 768px) {
+    height: 90px;
+    top: -45px;
+  }
+
+  @media (max-width: 480px) {
+    height: 80px;
+    top: -40px;
+  }
 `;
