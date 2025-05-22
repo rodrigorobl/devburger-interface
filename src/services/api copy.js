@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const api = axios.create({
-  baseURL: 'https://devburger-api-three.vercel.app/',
+  baseURL: 'http://localhost:3001/',
 });
 
 api.interceptors.request.use((config) => {
