@@ -12,6 +12,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import { useState } from "react";
 import { formatDate } from "../../../utils/formatDate";
+import { getImageUrl } from "../../../utils/imageUrl";
 import { ProductImage, SelectStatus } from "./styles";
 import { orderStatusOptions } from "./orderStatus";
 import { api } from "../../../services/api";
@@ -85,7 +86,7 @@ export function Row({ row, setOrders, orders }) {
 											<TableCell>{product.name}</TableCell>
 											<TableCell>{product.category}</TableCell>
 											<TableCell>
-												<ProductImage src={product.url} alt={product.name} />
+												<ProductImage src={getImageUrl(product.url)} alt={product.name} />
 											</TableCell>
 										</TableRow>
 									))}

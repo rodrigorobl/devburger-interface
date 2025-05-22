@@ -1,6 +1,7 @@
 import { Table } from '../index';
 import { useCart } from '../../hooks/CartContext';
 import { formatPrice } from '../../utils/formatPrice';
+import { getImageUrl } from '../../utils/imageUrl';
 import TrashIcon from '../../assets/trash.svg';
 import {
   ButtonGroup,
@@ -31,7 +32,7 @@ export function CartItems() {
           cartProducts.map((product) => (
             <Table.Tr key={product.id}>
               <Table.Td>
-                <ProductImage src={product.url} />
+                <ProductImage src={getImageUrl(product.url)} />
               </Table.Td>
               <Table.Td>{product.name}</Table.Td>
               <Table.Td>{product.currencyValue}</Table.Td>

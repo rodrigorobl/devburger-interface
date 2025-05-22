@@ -1,6 +1,7 @@
 import { api } from "../../../services/api";
 import { Container, ProductImage, EditButton } from "./styles";
 import { useNavigate } from "react-router-dom";
+import { getImageUrl } from "../../../utils/imageUrl";
 
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -65,7 +66,7 @@ export function Products() {
 								<TableCell align="center">{formatPrice(product.price)}</TableCell>
 								<TableCell align="center">{isOffer(product.offer)}</TableCell>
 								<TableCell align="center">
-									<ProductImage src={product.url} />
+									<ProductImage src={getImageUrl(product.url)} />
 								</TableCell>
 								<TableCell align="center">
 									<EditButton onClick={() => editProduct(product)}>
