@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const api = axios.create({
-  baseURL: 'https://devburger-api-three.vercel.app/',
+  baseURL: 'https://devburger-api-jyne.vercel.app/',
 });
 
 api.interceptors.request.use((config) => {
