@@ -23,7 +23,7 @@ export const Container = styled.div`
     p {
       font-size: 18px;
       color: ${(props) => props.theme.orange};
-      line-height: 20px;
+      line-height: 1.2; /* Unitless line-height */
       font-weight: 700;
       margin-top: 40px;
     }
@@ -32,7 +32,7 @@ export const Container = styled.div`
       font-size: 22px;
       color: ${(props) => props.theme.black};
       font-weight: 800;
-      line-height: 20px;
+      line-height: 1.2; /* Unitless line-height */
     }
   }
 
@@ -46,10 +46,12 @@ export const Container = styled.div`
       p {
         font-size: 16px;
         margin-top: 35px;
+        line-height: 1.3; /* Adjusted for smaller font */
       }
 
       strong {
         font-size: 20px;
+        line-height: 1.3; /* Adjusted for smaller font */
       }
     }
   }
@@ -59,15 +61,17 @@ export const Container = styled.div`
     gap: 25px;
 
     div {
-      height: 60px;
+      height: 60px; /* This height might be restrictive if product name wraps */
 
       p {
         font-size: 14px;
-        margin-top: 30px;
+        margin-top: 25px; /* Slightly reduced margin-top */
+        line-height: 1.4; /* Adjusted for smaller font */
       }
 
       strong {
         font-size: 18px;
+        line-height: 1.3; /* Adjusted for smaller font */
       }
     }
   }

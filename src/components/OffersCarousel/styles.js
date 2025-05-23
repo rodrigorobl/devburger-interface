@@ -30,6 +30,11 @@ export const Container = styled.div`
 
   .react-multiple-carousel__arrow--right {
     top: 10px;
+
+    @media (max-width: 480px) {
+      right: 5px; /* Match left arrow's side spacing */
+      /* top: 5px; Consider if vertical adjustment is also needed, similar to CategoriesCarousel */
+    }
   }
 
   padding-left: 40px;

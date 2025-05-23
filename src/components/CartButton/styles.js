@@ -9,6 +9,16 @@ export const ContainerButton = styled.button`
     font-size: 30px;
     color: ${(props) => props.theme.white};
 
+    @media (max-width: 768px) {
+      font-size: 26px; /* Adjusted for smaller screens */
+      height: 50px;    /* Adjusted for smaller screens */
+    }
+
+    @media (max-width: 480px) {
+      font-size: 22px; /* Further adjusted for mobile */
+      height: 46px;    /* Further adjusted for mobile */
+    }
+
     &:hover {
        background-color : ${(props) => props.theme.secondDarkPurple};
     }

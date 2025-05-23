@@ -4,17 +4,25 @@ import Background from '../../assets/background.svg';
 
 export const Banner = styled.div`
   background: url('${BannerHome}');
-  background-size: cover;
+  background-size: contain;
   background-position: center;
-  height: 480px;
+  background-repeat: no-repeat;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   h1 {
     font-family: 'Road Rage', sans-serif;
     font-size: 80px;
     color: ${(props) => props.theme.darkWhite};
-    right: 20%;
-    position: absolute;
-    top: 10%;
+    text-align: center; /* Ensure text is centered if it wraps */
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 60px; /* Adjust font size for smaller screens */
+    }
   }
 `;
 
@@ -24,5 +32,5 @@ export const Container = styled.section`
       rgba(255, 255, 255, 0.5)
     ),
     url('${Background}');
-  height: 800px;
+  min-height: 100vh;
 `;

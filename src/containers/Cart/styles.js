@@ -27,6 +27,20 @@ export const Banner = styled.div`
   img {
     height: 130px;
   }
+
+  @media (max-width: 768px) {
+    height: 150px;
+    img {
+      height: 100px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    height: 120px;
+    img {
+      height: 80px;
+    }
+  }
 `;
 
 export const Title = styled.div`
@@ -37,9 +51,21 @@ export const Title = styled.div`
   text-align: center;
   position: relative;
 
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 24px;
+    &::after {
+      width: 40px;
+      left: calc(50% - 20px); /* Adjusted for potentially smaller text */
+    }
+  }
+
   &::after {
     position: absolute;
-    left: calc(50% + -28px);
+    left: calc(50% - 28px); /* Corrected from + - to just - */
     bottom: 0;
     content: '';
     width: 56px;
@@ -56,4 +82,15 @@ export const Content = styled.div`
   max-width: 1280px;
   padding: 40px;
   margin: 0 auto;
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr; /* Stack cart items and summary */
+    gap: 30px;
+    padding: 30px;
+  }
+
+  @media (max-width: 480px) {
+    gap: 20px;
+    padding: 20px;
+  }
 `;

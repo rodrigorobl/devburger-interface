@@ -44,11 +44,13 @@ export const Container = styled.div`
       @media (max-width: 768px) {
         font-size: 18px;
         padding: 12px;
+        margin-bottom: 15px; /* Adjusted margin */
       }
 
       @media (max-width: 480px) {
         font-size: 16px;
         padding: 10px;
+        margin-bottom: 10px; /* Adjusted margin */
       }
     }
 
