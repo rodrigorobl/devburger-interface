@@ -9,7 +9,7 @@ export const Container = styled.div`
     }
 
     @media (max-width: 480px) {
-      padding-right: 10px;
+      padding-right: 15px;
     }
   }
 
@@ -22,6 +22,10 @@ export const Container = styled.div`
   .react-multiple-carousel__arrow--left {
     left: 15px;
     top: 10px;
+
+    @media (max-width: 768px) {
+      left: 10px;
+    }
 
     @media (max-width: 480px) {
       left: 5px;
@@ -41,8 +45,8 @@ export const Container = styled.div`
   }
 
   @media (max-width: 480px) {
-    padding-left: 10px;
-    padding-bottom: 20px;
+    padding-left: 15px;
+    padding-bottom: 25px;
   }
 `;
 
@@ -68,15 +72,23 @@ export const Title = styled.h2`
   @media (max-width: 768px) {
     font-size: 28px;
     margin: 50px 0;
+    padding-bottom: 10px;
+
+    &::after {
+      width: 48px;
+      left: calc(50% - 24px);
+    }
   }
 
   @media (max-width: 480px) {
     font-size: 24px;
     margin: 40px 0;
+    padding-bottom: 8px;
 
     &::after {
       width: 40px;
       left: calc(50% - 20px);
+      height: 3px;
     }
   }
 `;

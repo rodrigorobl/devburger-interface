@@ -21,11 +21,26 @@ export const Banner = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
-
   height: 180px;
 
   img {
     height: 130px;
+  }
+
+  @media (max-width: 768px) {
+    height: 150px;
+
+    img {
+      height: 100px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    height: 120px;
+
+    img {
+      height: 80px;
+    }
   }
 `;
 
@@ -36,6 +51,7 @@ export const Title = styled.div`
   color: ${(props) => props.theme.green};
   text-align: center;
   position: relative;
+  margin: 30px 0;
 
   &::after {
     position: absolute;
@@ -45,6 +61,26 @@ export const Title = styled.div`
     width: 56px;
     height: 4px;
     background-color: ${(props) => props.theme.green};
+  }
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+    margin: 25px 0;
+
+    &::after {
+      width: 48px;
+      left: calc(50% + -24px);
+    }
+  }
+
+  @media (max-width: 480px) {
+    font-size: 24px;
+    margin: 20px 0;
+
+    &::after {
+      width: 40px;
+      left: calc(50% + -20px);
+    }
   }
 `;
 
@@ -56,4 +92,20 @@ export const Content = styled.div`
   max-width: 1280px;
   padding: 40px;
   margin: 0 auto;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr 35%;
+    gap: 30px;
+    padding: 30px;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 20px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 15px;
+  }
 `;

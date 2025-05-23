@@ -11,6 +11,10 @@ export const Container = styled.div`
     padding: 0 20px;
     height: auto;
   }
+
+  @media (max-width: 480px) {
+    padding: 0 12px;
+  }
 `;
 
 export const Content = styled.div`
@@ -20,10 +24,12 @@ export const Content = styled.div`
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
+  height: 100%;
 
   @media (max-width: 768px) {
     flex-direction: column;
     padding: 10px 0;
+    gap: 15px;
   }
 `;
 
@@ -51,7 +57,8 @@ export const Navigation = styled.nav`
 
     div {
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 15px;
+      justify-content: center;
     }
 
     hr {
@@ -73,6 +80,10 @@ export const HeaderLink = styled(Link)`
   }
 
   @media (max-width: 768px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 480px) {
     font-size: 12px;
   }
 `;
@@ -85,12 +96,13 @@ export const Options = styled.div`
 
   @media (max-width: 768px) {
     gap: 20px;
-    margin-top: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   @media (max-width: 480px) {
-    flex-direction: column;
     gap: 15px;
+    width: 100%;
   }
 `;
 
@@ -113,6 +125,12 @@ export const Profile = styled.div`
 
   @media (max-width: 768px) {
     font-size: 12px;
+    gap: 8px;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    justify-content: center;
   }
 `;
 
@@ -121,9 +139,13 @@ export const LinkContainer = styled.div`
   align-items: center;
   gap: 10px;
 
+  @media (max-width: 768px) {
+    gap: 8px;
+  }
+
   @media (max-width: 480px) {
-    flex-direction: column;
-    align-items: center;
+    width: 100%;
+    justify-content: center;
   }
 `;
 
@@ -133,4 +155,9 @@ export const Logout = styled.button`
   font-weight: 700;
   background-color: transparent;
   border: none;
+  cursor: pointer;
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
 `;

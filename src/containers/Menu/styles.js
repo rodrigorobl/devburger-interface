@@ -40,10 +40,39 @@ export const Banner = styled.div`
     top: 30%;
   }
 
+  @media (max-width: 768px) {
+    height: 380px;
+
+    h1 {
+      font-size: 60px;
+      line-height: 50px;
+      right: 10%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    height: 300px;
+
+    h1 {
+      font-size: 40px;
+      line-height: 35px;
+      right: 5%;
+      text-align: center;
+    }
+  }
+
   span {
     display: block;
     color: ${(props) => props.theme.white};
     font-size: 20px;
+
+    @media (max-width: 768px) {
+      font-size: 18px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 16px;
+    }
   }
 `;
 
@@ -52,6 +81,18 @@ export const CategoryMenu = styled.div`
   justify-content: center;
   gap: 50px;
   margin-top: 30px;
+  flex-wrap: wrap;
+  padding: 0 20px;
+
+  @media (max-width: 768px) {
+    gap: 30px;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 480px) {
+    gap: 20px;
+    margin-top: 15px;
+  }
 `;
 
 export const CategoryButton = styled(Link)`
@@ -65,6 +106,14 @@ export const CategoryButton = styled(Link)`
   line-height: 20px;
   border: none;
   border-bottom: ${(props) => props.$isActiveCategory && `3px solid ${(props) => props.theme.purple}`};
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 16px;
+  }
 `;
 
 export const ProductsContainer = styled.div`
@@ -75,4 +124,18 @@ export const ProductsContainer = styled.div`
   justify-content: center;
   max-width: 1280px;
   margin: 50px auto;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    padding: 30px;
+    margin: 30px auto;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 20px;
+    margin: 20px auto;
+  }
 `;

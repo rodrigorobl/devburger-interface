@@ -11,6 +11,11 @@ export const Container = styled.div`
   cursor: grab;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   position: relative;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.02);
+  }
 
   div {
     width: 100%;
@@ -36,6 +41,24 @@ export const Container = styled.div`
     }
   }
 
+  @media (max-width: 1024px) {
+    padding: 18px;
+    gap: 35px;
+
+    div {
+      height: 75px;
+
+      p {
+        font-size: 17px;
+        margin-top: 35px;
+      }
+
+      strong {
+        font-size: 20px;
+      }
+    }
+  }
+
   @media (max-width: 768px) {
     padding: 15px;
     gap: 30px;
@@ -49,7 +72,7 @@ export const Container = styled.div`
       }
 
       strong {
-        font-size: 20px;
+        font-size: 18px;
       }
     }
   }
@@ -59,7 +82,7 @@ export const Container = styled.div`
     gap: 25px;
 
     div {
-      height: 60px;
+      height: 65px;
 
       p {
         font-size: 14px;
@@ -67,7 +90,7 @@ export const Container = styled.div`
       }
 
       strong {
-        font-size: 18px;
+        font-size: 16px;
       }
     }
   }
@@ -77,6 +100,16 @@ export const CardImage = styled.img`
   height: 100px;
   position: absolute;
   top: -50px;
+  transition: transform 0.2s ease-in-out;
+
+  ${Container}:hover & {
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 1024px) {
+    height: 95px;
+    top: -47px;
+  }
 
   @media (max-width: 768px) {
     height: 90px;
