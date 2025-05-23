@@ -40,6 +40,12 @@ export function CategoriesCarousel() {
       items: 1,
     },
   };
+  const handleCategoryClick = (categoryId, categoryName) => {
+    navigate({
+      pathname: '/cardapio',
+      search: `?categoria=${categoryId}`,
+    });
+  };
 
   return (
     <Container>
@@ -49,17 +55,14 @@ export function CategoriesCarousel() {
         responsive={responsive}
         infinite={true}
         partialVisbile={false}
+        renderButtonGroupOutside={true}
         itemClass="carousel-items"
       >
         {categories.map((category) => (
-          <ContainerItems key={category.id} imageUrl={category.url}>
-            <CategoryButton
-              onClick={() => {
-                navigate({
-                  pathname: '/cardapio',
-                  search: `?categoria=${category.id}`,
-                });
-              }}
+          <ContainerItems key={category.id} imageUrl={category.url}>            <CategoryButton
+              onClick={() => handleCategoryClick(category.id, category.name)}
+              aria-label={`Ver produtos da categoria ${category.name}`}
+              title={`Ver todos os produtos ${category.name}`}
             >
               {category.name}
             </CategoryButton>
