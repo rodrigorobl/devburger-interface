@@ -9,6 +9,17 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
   margin-bottom: 20px;
+  @media (max-width: 475px) {
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+  }
+
+  @media (max-width: 360px) {
+    padding: 10px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+  }
 
   * {
     color: ${(props) => props.theme.secondBlack};
@@ -21,9 +32,7 @@ export const Container = styled.div`
     grid-template-areas:
       'title title'
       'items items-price'
-      'delivery-tax delivery-tax-price';
-
-    .title {
+      'delivery-tax delivery-tax-price';    .title {
       grid-area: title;
       font-size: 20px;
       font-weight: 700;
@@ -33,12 +42,26 @@ export const Container = styled.div`
       width: 100%;
       padding: 15px;
       text-align: center;
-      border-radius: 8px;
-    }
+      border-radius: 8px;      @media (max-width: 475px) {
+        font-size: 16px;
+        padding: 12px;
+        margin-bottom: 15px;
+      }
 
-    .items {
+      @media (max-width: 360px) {
+        font-size: 14px;
+        padding: 10px;
+        margin-bottom: 12px;
+        border-radius: 6px;
+      }
+    }    .items {
       grid-area: items;
       padding-left: 20px;
+
+      @media (max-width: 360px) {
+        padding-left: 12px;
+        font-size: 13px;
+      }
     }
 
     .items-price {

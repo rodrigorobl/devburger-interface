@@ -33,10 +33,17 @@ export function Header() {
             <HeaderLink to="/" $isActive={pathname === '/'}>
               Home
             </HeaderLink>
-            <hr></hr>
-            <HeaderLink to="/cardapio" $isActive={pathname === '/cardapio'}>
+            <hr></hr>            <HeaderLink to="/cardapio" $isActive={pathname === '/cardapio'}>
               Cardápio
             </HeaderLink>
+            {userInfo.admin && (
+              <>
+                <hr></hr>
+                <HeaderLink to="/admin" $isActive={pathname.startsWith('/admin')}>
+                  Administrador
+                </HeaderLink>
+              </>
+            )}
           </div>
         </Navigation>
         <Options>

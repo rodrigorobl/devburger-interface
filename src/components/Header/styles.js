@@ -6,14 +6,18 @@ export const Container = styled.div`
   width: 100%;
   height: 72px;
   padding: 0 56px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 
   @media (max-width: 768px) {
-    padding: 0 20px;
+    padding: 8px 20px;
     height: auto;
   }
 
   @media (max-width: 480px) {
-    padding: 0 12px;
+    padding: 8px 12px;
   }
 `;
 
@@ -27,9 +31,10 @@ export const Content = styled.div`
   height: 100%;
 
   @media (max-width: 768px) {
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
     padding: 10px 0;
-    gap: 15px;
+    gap: 10px;
   }
 `;
 
@@ -44,11 +49,35 @@ export const Navigation = styled.nav`
     justify-content: center;
     align-items: center;
     gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 768px) {
+    height: auto;
+    padding: 10px 0;
+
+    div {
+      gap: 15px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    
+    div {
+      gap: 10px;
+      width: 100%;
+      justify-content: space-around;
+    }
   }
 
   hr {
     height: 24px;
     border: 1px solid ${(props) => props.theme.darkGray};
+    
+    @media (max-width: 480px) {
+      display: none;
+    }
   }
 
   @media (max-width: 768px) {
@@ -70,10 +99,33 @@ export const Navigation = styled.nav`
 export const HeaderLink = styled(Link)`
   color: ${(props) => (props.$isActive ? (props) => props.theme.purple : (props) => props.theme.white)};
   border-bottom: ${(props) => (props.$isActive ? `1px solid ${(props) => props.theme.purple}` : "none")};
-  padding-bottom: 5px;
+  padding: 8px 12px;
   text-decoration: none;
   font-size: 14px;
-  transition: color 200ms;
+  transition: all 200ms;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  
+  &:hover {
+    color: ${props => props.theme.purple};
+  }
+
+  @media (max-width: 475px) {
+    font-size: 12px;
+    padding: 6px 8px;
+    min-width: auto;
+    border-radius: 4px;
+    background-color: ${props => props.$isActive ? props.theme.purple + '20' : 'transparent'};
+  }
+
+  @media (max-width: 480px) {
+    font-size: 13px;
+    padding: 6px 10px;
+    min-width: auto;
+  }
 
   &:hover {
     color: ${(props) => props.theme.purple};
@@ -111,6 +163,13 @@ export const Profile = styled.div`
   align-items: center;
   gap: 12px;
   font-size: 14px;
+
+  @media (max-width: 475px) {
+    font-size: 11px;
+    gap: 6px;
+    flex-direction: column;
+    align-items: center;
+  }
 
   p {
     color: ${(props) => props.theme.white};
